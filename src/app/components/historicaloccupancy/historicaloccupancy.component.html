@@ -1,0 +1,35 @@
+<header>
+    <nav class ="navbar navbar-expand-md navbar-light bg-light">
+    <div><a routerLink="/homepage" class="navbar-brand">Smart Cafeteria</a></div>
+    
+    <ul class="navbar-nav">
+       
+      <li><a routerLink="/historicaloccupancy" class="nav-link">Historical Occupancy</a></li>
+      <li><a routerLink="/liveoccupancy" class="nav-link">Live Occupancy</a></li>
+      <li><a routerLink="/dashboard" class="nav-link">Dashboard</a></li>
+      <li><a routerLink="/" class="nav-link">LogOut</a></li>
+    
+    </ul>
+      </nav>
+    </header> 
+
+<div class="mt-5">
+    <table class="table table-bordered">
+        <thead class="thead">
+<tr>
+    <th>
+        Date and Time
+    </th>
+    <th>
+    Occupancy Count
+    </th>
+</tr>
+        </thead>
+        <tbody class="tbody">
+<tr *ngFor="let currentOccupancy of currentOccupancyDetails">
+    <td>{{currentOccupancy.times}}</td>
+    <td>{{currentOccupancy.count}}</td>
+</tr>
+        </tbody>
+    </table>
+</div>
