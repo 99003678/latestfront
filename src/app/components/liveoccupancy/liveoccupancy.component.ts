@@ -82,7 +82,7 @@ this.zone.runOutsideAngular(()=> {
   let title=chart.titles.create();
   title.text="Occupancy Count by time";
   // chart.fill = am4core.color("black");
-  chart.stroke = am4core.color("red");
+  chart.stroke = am4core.color("white");
   
  
 
@@ -160,6 +160,8 @@ this.zone.runOutsideAngular(()=>
       let chart=am4core.create("line-chartt",am4charts.XYChart);;
       let title=chart.titles.create();
       title.text="Service Occupancy Count by time";
+
+      chart.stroke = am4core.color("white");
     
       
 

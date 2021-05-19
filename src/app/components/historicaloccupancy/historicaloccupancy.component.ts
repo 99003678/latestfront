@@ -11,9 +11,14 @@ export class HistoricaloccupancyComponent implements OnInit {
   historicalDataDining=null;
   historicalDataService=null;
 
+  historylasthourdiningdata=null;
+  historylasthourservicedata=null;
+
   constructor(private occupancyService: OccupancyService) {
     this.getHistoricalDataDiningDetails();
     this.getHistoricalDataServiceDetails();
+    this.historylasthourdining();
+    this.historylasthourservice();
    }
 
   ngOnInit(): void {
@@ -36,6 +41,30 @@ export class HistoricaloccupancyComponent implements OnInit {
       (resp)=>{
         console.log(resp);
         this.historicalDataService=resp;
+      },
+      (err)=>{
+        console.log(err);
+      }
+    );
+  }
+
+  historylasthourdining(){
+    this.occupancyService.gethistlastdin().subscribe(
+      (resp)=>{
+        console.log(resp);
+        this.historylasthourdiningdata=resp;
+      },
+      (err)=>{
+        console.log(err);
+      }
+    );
+  }
+
+  historylasthourservice(){
+    this.occupancyService.gethistlastser().subscribe(
+      (resp)=>{
+        console.log(resp);
+        this.historylasthourservicedata=resp;
       },
       (err)=>{
         console.log(err);

@@ -46,4 +46,13 @@ export class OccupancyService {
   }
 
 
+
+  public gethistlastdin():Observable<object>{
+    return this._http.get("http://localhost:8080/historylasthourdining");
+  }
+
+  public gethistlastser():Observable<object>{
+    return this._http.get("http://localhost:8080/historylasthourservice");
+  }
+
 }
